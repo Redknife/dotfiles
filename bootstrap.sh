@@ -13,7 +13,31 @@ if [[ `uname` == 'Darwin' ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
-      brew install git-extras zsh zsh-completions htop node python python3
+      brew install git-extras zsh zsh-completions htop python python3
+      brew install caskroom/cask/brew-cask
+      brew tap caskroom/versions
+      brew cask install iterm2
+      brew cask install google-chrome
+      brew cask install firefox
+      brew cask install java
+      brew cask install node
+      brew cask install vagrant
+      brew cask install boot2docker
+      brew cask install virtualbox
+      brew cask install sublime-text3
+      brew cask install telegram
+      brew cask install appcleaner
+      brew cask install droplr
+      brew cask install transmission
+      brew cask install duet
+      brew cask install vlc
+      brew cask install forklift
+      brew cask install istat-menus
+      brew cask install alfred
+      brew cask install divvy
+      brew cask install ioquake3
+      brew cask install pycharm
+      brew cask install phpstorm
   fi
 
   # http://github.com/sindresorhus/quick-look-plugins
@@ -25,6 +49,9 @@ if [[ `uname` == 'Darwin' ]]; then
   echo 'Tweaking OS X...'
     source 'etc/osx.sh'
 fi
+
+echo 'Install python modules'
+  pip install -r python-base-modules.txt
 
 echo 'Install oh-my-zsh'
   git clone git://github.com/robbyrussell/oh-my-zsh.git "$dev/oh-my-zsh"
