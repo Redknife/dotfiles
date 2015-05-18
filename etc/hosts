@@ -1,0 +1,64 @@
+ Get hosts file at http://someonewhocares.org/hosts/
+# and append additions at the top of it.
+
+#<useful>
+127.0.0.1 dev.host.io
+127.0.0.1 localhost
+#</useful>
+
+#<additional-spyware-sites>
+0.0.0.1 spylog.com
+0.0.0.1 counter.spylog.com
+0.0.0.1 openstat.net
+0.0.0.1 rs.mail.ru
+0.0.0.1 ad.mail.ru
+0.0.0.1 www.roulettebotplus.com
+0.0.0.1 adforce.ru
+0.0.0.1 go.gamenet.ru
+0.0.0.1 www.directadvert.ru
+0.0.0.1 ad05f.ru
+0.0.0.1 mg.dt00.net
+0.0.0.1 zeobit.com
+0.0.0.1 mackeeperapp.zeobit.com
+#</additional-spyware-sites>
+
+#<iStatMenus>
+127.0.0.1 whatsmyip.islayer.com
+127.0.0.1 bjango.com
+127.0.0.1 islayer.com
+127.0.0.1 ip.bjango.com
+127.0.0.1 update.bjango.com
+#</iStatMenus>
+
+#<block MAMP>
+127.0.0.1 mamp.info
+#</block MAMP>
+
+#<block adobe>
+127.0.0.1 activate.adobe.com
+127.0.0.1 practivate.adobe.com
+127.0.0.1 ereg.adobe.com
+127.0.0.1 wip3.adobe.com
+127.0.0.1 activate.wip3.adobe.com
+127.0.0.1 3dns-3.adobe.com
+127.0.0.1 3dns-2.adobe.com
+127.0.0.1 adobe-dns.adobe.com
+127.0.0.1 adobe-dns-2.adobe.com
+127.0.0.1 adobe-dns-3.adobe.com
+127.0.0.1 ereg.wip3.adobe.com
+127.0.0.1 activate-sea.adobe.com
+127.0.0.1 wwis-dubc1-vip60.adobe.com
+127.0.0.1 activate-sjc0.adobe.com
+127.0.0.1 hl2rcv.adobe.com
+127.0.0.1 lm.licenses.adobe.com
+127.0.0.1 na2m-pr.licenses.adobe.com
+127.0.0.1 ims-na1-prprod.adobelogin.com
+127.0.0.1 na4r.services.adobe.com
+127.0.0.1 na1r.services.adobe.com
+127.0.0.1 activate.adobe.com
+127.0.0.1 practivate.adobe.com
+127.0.0.1 lm.licenses.adobe.com
+127.0.0.1 lmlicenses.wip4.adobe.com
+127.0.0.1 hlrcv.stage.adobe.com
+127.0.0.1 na1r.services.adobe.com
+#</block adobe>
