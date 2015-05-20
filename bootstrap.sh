@@ -21,9 +21,9 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install firefox
       brew cask install java
       brew cask install node
+      brew cask install virtualbox
       brew cask install vagrant
       brew cask install boot2docker
-      brew cask install virtualbox
       brew cask install sublime-text3
       brew cask install telegram
       brew cask install appcleaner
@@ -50,11 +50,17 @@ if [[ `uname` == 'Darwin' ]]; then
     source 'etc/osx.sh'
 fi
 
+echo 'Install boot2docker'
+  boot2docker init
+
 echo 'Install python modules'
   pip install -r python-base-modules.txt
 
 echo 'Install oh-my-zsh'
   git clone git://github.com/robbyrussell/oh-my-zsh.git "$dev/oh-my-zsh"
+
+echo 'Install vim (https://github.com/spf13/spf13-vim)'
+  sh <(curl https://j.mp/spf13-vim3 -L)
 
 echo 'Applying sublime config...'
   st=$(pwd)/sublime/packages
