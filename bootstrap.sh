@@ -38,6 +38,7 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install ioquake3
       brew cask install pycharm
       brew cask install phpstorm
+      brew cask install kitematic
   fi
 
   # http://github.com/sindresorhus/quick-look-plugins
