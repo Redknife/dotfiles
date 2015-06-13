@@ -1,8 +1,39 @@
+#!/usr/bin/env bash
+
 # Some stuff was taken from
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
+# Ask for the administrator password upfront
+sudo -v
+
 # Main
 # ====
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+# Increase window resize speed for Cocoa applications
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
+# Menu bar: hide the Time Machine, Volume, and User icons
+for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+	defaults write "${domain}" dontAutoLoad -array \
+		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+		"/System/Library/CoreServices/Menu Extras/User.menu"
+done
+defaults write com.apple.systemuiserver menuExtras -array \
+	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+	"/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Show battery life percentage.
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
@@ -24,6 +55,12 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Save screenshots to the downlaods.
 defaults write com.apple.screencapture location "$HOME/Downloads/"
 
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# Enable subpixel font rendering on non-Apple LCDs
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
 # Sound
 # =====
 
@@ -39,11 +76,18 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 sudo defaults write com.apple.AppleMultitouchTrackpad Clicking 1
 
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
+
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 # defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 
 # Disable auto-correct
-# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
@@ -71,6 +115,9 @@ sudo pmset -a sms 0
 # Finder
 # ======
 
+# Empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -90,6 +137,34 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Finder: allow text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Automatically open a new Finder window when a volume is mounted
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Expand the following File Info panes:
+# “General”, “Open with”, and “Sharing & Permissions”
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+	General -bool true \
+	OpenWith -bool true \
+	Privileges -bool true
 
 # Safari
 # ======
@@ -120,6 +195,9 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\
 # Spotlight
 # =========
 
+# Hide Spotlight tray-icon (and subsequent helper)
+sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
@@ -128,8 +206,8 @@ sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Vol
 defaults write com.apple.spotlight orderedItems -array \
         '{"enabled" = 1;"name" = "APPLICATIONS";}' \
         '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-        '{"enabled" = 1;"name" = "DIRECTORIES";}' \
-        '{"enabled" = 1;"name" = "PDF";}' \
+        '{"enabled" = 0;"name" = "DIRECTORIES";}' \
+        '{"enabled" = 0;"name" = "PDF";}' \
         '{"enabled" = 0;"name" = "FONTS";}' \
         '{"enabled" = 0;"name" = "DOCUMENTS";}' \
         '{"enabled" = 0;"name" = "MESSAGES";}' \
@@ -153,11 +231,7 @@ sudo mdutil -E / > /dev/null
 # Terminal
 # ========
 
-# Use a modified version of the Pro theme by default in Terminal.app
-# open "$pm/dotfiles/terminal/paulmillr.terminal"
-# sleep 1 # Wait a bit to make sure the theme is loaded
-# defaults write com.apple.terminal 'Default Window Settings' -string 'paulmillr'
-# defaults write com.apple.terminal 'Startup Window Settings' -string 'paulmillr'
+
 
 # Transmission
 # ============

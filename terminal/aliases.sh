@@ -2,7 +2,7 @@
 # = Aliases =
 # ==================================================================
 
-alias s='subl'
+alias a='atom'
 
 # Simple clear command.
 alias cl='clear'

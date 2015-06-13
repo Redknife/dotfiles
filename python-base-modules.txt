@@ -1,3 +1,5 @@
 virtualenv
 virtualenvwrapper
 ipython
+pep8
+autopep8

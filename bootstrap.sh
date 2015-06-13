@@ -24,7 +24,7 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install virtualbox
       brew cask install vagrant
       brew cask install boot2docker
-      brew cask install sublime-text3
+      brew cask install atom
       brew cask install telegram
       brew cask install appcleaner
       brew cask install droplr
@@ -32,20 +32,15 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install duet
       brew cask install vlc
       brew cask install forklift
-      brew cask install istat-menus
       brew cask install alfred
       brew cask install divvy
       brew cask install ioquake3
-      brew cask install pycharm
-      brew cask install phpstorm
       brew cask install kitematic
   fi
 
   # http://github.com/sindresorhus/quick-look-plugins
   echo 'Installing Quick Look plugins...'
-    brew tap phinze/homebrew-cask
-    brew install caskroom/cask/brew-cask
-    brew cask install suspicious-package quicklook-json qlmarkdown qlstephen qlcolorcode
+    brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
   echo 'Tweaking OS X...'
     source 'etc/osx.sh'
@@ -62,19 +57,5 @@ echo 'Install oh-my-zsh'
 
 echo 'Install vim (https://github.com/spf13/spf13-vim)'
   sh <(curl https://j.mp/spf13-vim3 -L)
-
-echo 'Applying sublime config...'
-  st=$(pwd)/sublime/packages
-  as="$HOME/Library/Application Support/Sublime Text 3/Packages"
-  asprefs="$as/User/Preferences.sublime-settings"
-  if [[ -d "$as" ]]; then
-    rm $asprefs
-    ln -s "$st/user/Preferences.sublime-settings" "$asprefs"
-    wget -O "$as/seti.zip" https://github.com/ctf0/Seti_ST3/archive/master.zip
-    unzip "$as/seti.zip" -d "$as"
-    mv "$as/Seti_ST3-master" "$as/Seti_UI"
-  else
-    echo "Install Sublime Text http://www.sublimetext.com"
-  fi
 
 popd
