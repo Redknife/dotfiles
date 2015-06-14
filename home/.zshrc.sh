@@ -5,7 +5,7 @@ ohmyzsh="$HOME/Developer/oh-my-zsh"
 
 export ZSH=$ohmyzsh
 
-ZSH_THEME="agnoster"
+ZSH_THEME="geoffgarside"
 ENABLE_CORRECTION="true"
 plugins=(git autopep8 bower brew common-aliases docker encode64 Forklift git git-extras history npm osx pip python ssh-agent sublime vagrant virtualenvwrapper)
 
