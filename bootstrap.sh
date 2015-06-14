@@ -42,9 +42,6 @@ if [[ `uname` == 'Darwin' ]]; then
   # http://github.com/sindresorhus/quick-look-plugins
   echo 'Installing Quick Look plugins...'
     brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
-
-  echo 'Tweaking OS X...'
-    source 'etc/osx.sh'
 fi
 
 echo 'Install boot2docker'
