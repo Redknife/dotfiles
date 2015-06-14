@@ -36,6 +36,7 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install divvy
       brew cask install ioquake3
       brew cask install kitematic
+      brew cask install evernote
   fi
 
   # http://github.com/sindresorhus/quick-look-plugins
