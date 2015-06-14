@@ -47,13 +47,13 @@ fi
 echo 'Install boot2docker'
   boot2docker init
 
-echo 'Install python modules'
-  pip install -r python-base-modules.txt
-
 echo 'Install oh-my-zsh'
   git clone git://github.com/robbyrussell/oh-my-zsh.git "$dev/oh-my-zsh"
 
 echo 'Install vim (https://github.com/spf13/spf13-vim)'
   sh <(curl https://j.mp/spf13-vim3 -L)
+  
+echo 'For install python modules run:'
+echo 'pip install -r python-base-modules.txt'
 
 popd
