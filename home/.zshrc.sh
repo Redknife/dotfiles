@@ -3,7 +3,7 @@ dev="$HOME/Developer/redknife"
 dotfiles="$dev/dotfiles"
 ohmyzsh="$HOME/Developer/oh-my-zsh"
 
-export ZSH=ohmyzsh
+export ZSH=$ohmyzsh
 
 ZSH_THEME="agnoster"
 ENABLE_CORRECTION="true"
