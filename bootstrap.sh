@@ -13,7 +13,8 @@ if [[ `uname` == 'Darwin' ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
-      brew install git-extras zsh zsh-completions htop python python3
+      brew install git-extras zsh zsh-completions wget
+      brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
       brew install caskroom/cask/brew-cask
       brew tap caskroom/versions
       brew cask install iterm2
@@ -52,7 +53,7 @@ echo 'Install oh-my-zsh'
 
 echo 'Install vim (https://github.com/spf13/spf13-vim)'
   sh <(curl https://j.mp/spf13-vim3 -L)
-  
+
 echo 'For install python modules run:'
 echo 'pip install -r python-base-modules.txt'
 

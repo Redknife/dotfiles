@@ -4,6 +4,7 @@
 #<useful>
 127.0.0.1 dev.host.io
 127.0.0.1 localhost
+::1       localhost
 #</useful>
 
 #<additional-spyware-sites>

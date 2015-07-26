@@ -70,3 +70,18 @@ function size() {
       }
       {gsub(/^[0-9]+/, human($1)); print}'
 }
+
+# init joomla project
+function start_joomla() {
+  local folder="$1"
+  if [ -z "$folder" ]; then
+    echo "Usage: start_joomla <project_folder>"
+  else
+    wget https://github.com/Redknife/joomla-deploy/archive/master.zip
+    unzip master.zip
+    rm -rf master.zip
+    mv "joomla-deploy-master" "$folder"
+    rm "$folder/.gitignore"
+    rm "$folder/README.md"
+  fi
+}

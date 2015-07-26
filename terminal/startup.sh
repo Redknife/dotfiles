@@ -1,5 +1,5 @@
-$(boot2docker shellinit 2>/dev/null)
+#$(boot2docker shellinit 2>/dev/null)
+source ~/Developer/rimraf/k/k.plugin.zsh
 
-export WORKON_HOME=$HOME/Developer/redknife/.virtualenvs
-export PROJECT_HOME=$HOME/Developer/redknife
-source /usr/local/bin/virtualenvwrapper.sh
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+pyenv virtualenvwrapper_lazy

@@ -1,6 +1,10 @@
-virtualenv
-virtualenvwrapper
-ipython
-pep8
 autopep8
+flake8
+ipython
+isort
+joe
+pep8
+pip-tools
+virtualenvwrapper
+wheel
 yapf

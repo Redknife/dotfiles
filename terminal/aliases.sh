@@ -4,6 +4,11 @@
 
 alias a='atom'
 
+alias cur='cd ~/Developer/redknife/work/klen74.ru/'
+alias work='cd ~/Developer/redknife/work'
+alias gh='cd ~/Developer/redknife/github'
+alias bb='cd ~/Developer/redknife/bitbucket'
+
 # Simple clear command.
 alias cl='clear'
 

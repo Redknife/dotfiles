@@ -35,6 +35,14 @@
 
   ghfork = !sh "$HOME/Developer/redknife/dotfiles/git-extras/git-ghpull.sh"
   cleanup = !ruby "$HOME/Developer/redknife/dotfiles/git-extras/git-cleanup.rb"
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
 
 [push]
   default = current
