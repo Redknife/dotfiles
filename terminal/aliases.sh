@@ -3,11 +3,12 @@
 # ==================================================================
 
 alias a='atom'
+alias s='subl'
 
-alias cur='cd ~/Developer/redknife/work/klen74.ru/'
-alias work='cd ~/Developer/redknife/work'
-alias gh='cd ~/Developer/redknife/github'
-alias bb='cd ~/Developer/redknife/bitbucket'
+alias cur='cd ~/Developer/rs/work/klen74.ru/'
+alias work='cd ~/Developer/rs/work'
+alias gh='cd ~/Developer/rs/github'
+alias bb='cd ~/Developer/rs/bitbucket'
 
 # Simple clear command.
 alias cl='clear'

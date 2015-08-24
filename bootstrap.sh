@@ -24,11 +24,8 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install node
       brew cask install virtualbox
       brew cask install vagrant
-      brew cask install boot2docker
-      brew cask install atom
       brew cask install telegram
       brew cask install appcleaner
-      brew cask install droplr
       brew cask install transmission
       brew cask install duet
       brew cask install vlc
@@ -36,7 +33,6 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install alfred
       brew cask install divvy
       brew cask install ioquake3
-      brew cask install kitematic
       brew cask install evernote
   fi
 
@@ -44,9 +40,6 @@ if [[ `uname` == 'Darwin' ]]; then
   echo 'Installing Quick Look plugins...'
     brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 fi
-
-echo 'Install boot2docker'
-  boot2docker init
 
 echo 'Install oh-my-zsh'
   git clone git://github.com/robbyrussell/oh-my-zsh.git "$dev/oh-my-zsh"

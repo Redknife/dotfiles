@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-dev="$HOME/Developer/redknife"
+dev="$HOME/Developer/rs"
 dotfiles="$dev/dotfiles"
 ohmyzsh="$HOME/Developer/oh-my-zsh"
 
