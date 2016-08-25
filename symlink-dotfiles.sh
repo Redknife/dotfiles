@@ -18,9 +18,8 @@ link() {
   ln -s "$from" "$to"
 }
 
-for location in $(find home -name '.*'); do
+for location in $(find home -type f -name '*'); do
   file="${location##*/}"
-  file="${file%.sh}"
+  file=".${file}"
   link "$dotfiles/$location" "$HOME/$file"
 done
-

@@ -1,8 +1,6 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
-# A simple script for setting up OSX dev environment.
-
-dev="$HOME/Developer"
+dev="$HOME/Developer/rs"
 pushd .
 cd $dev
 
@@ -13,15 +11,11 @@ if [[ `uname` == 'Darwin' ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
-      brew install git-extras zsh zsh-completions wget
-      brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
-      brew install caskroom/cask/brew-cask
-      brew tap caskroom/versions
+      brew install git zsh zsh-completions wget node ssh-copy-id ruby
+      brew tap caskroom/cask
       brew cask install iterm2
       brew cask install google-chrome
       brew cask install firefox
-      brew cask install java
-      brew cask install node
       brew cask install virtualbox
       brew cask install vagrant
       brew cask install telegram
@@ -34,20 +28,28 @@ if [[ `uname` == 'Darwin' ]]; then
       brew cask install divvy
       brew cask install ioquake3
       brew cask install evernote
+      brew cask install coconutbattery
+      brew cask install dashlane
+      brew cask install kitematic
+      brew cask install clipmenu
   fi
 
   # http://github.com/sindresorhus/quick-look-plugins
   echo 'Installing Quick Look plugins...'
     brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+
+  echo 'Install Gulp, Bower'
+    npm install gulp-cli -g
+    npm install bower -g
 fi
 
 echo 'Install oh-my-zsh'
-  git clone git://github.com/robbyrussell/oh-my-zsh.git "$dev/oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo 'Install vim (https://github.com/spf13/spf13-vim)'
-  sh <(curl https://j.mp/spf13-vim3 -L)
+echo 'Install k'
+  git clone https://github.com/supercrabtree/k $dev/dotfiles/zsh/plugins/k
 
-echo 'For install python modules run:'
-echo 'pip install -r python-base-modules.txt'
+# echo 'Install vim (https://github.com/spf13/spf13-vim)'
+#   sh <(curl https://j.mp/spf13-vim3 -L)
 
 popd

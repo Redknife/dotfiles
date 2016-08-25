@@ -1,7 +1,3 @@
-# ==================================================================
-# = Functions =
-# ==================================================================
-
 # Show man page in Preview.app.
 # $ manp cd
 function manp {
@@ -22,6 +18,13 @@ function edit() {
   $EDITOR $dir
 }
 alias e=edit
+
+# Png2Base64
+function p2b64() {
+  cat $1 | base64 | pbcopy
+  echo 'base64 string copied to the clipboard'
+}
+alias p2b64=p2b64
 
 # Find files and exec commands at them.
 # $ find-exec .coffee cat | wc -l
@@ -84,4 +87,18 @@ function start_joomla() {
     rm "$folder/.gitignore"
     rm "$folder/README.md"
   fi
+}
+
+# cd to blank_j3 folder
+function bj3() {
+  if [ -z "$1" ]; then
+    echo "Usage: bj3 <folder with blank_j3>"
+  else
+    cd $1/**/blank_j3
+    pwd
+  fi
+}
+
+function runmatrix() {
+  echo -e "\e[1;40m" ; clear ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(( $RANDOM % 72 )) ;sleep 0.05; done|gawk '{ letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()"; c=$4; letter=substr(letters,c,1);a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
 }

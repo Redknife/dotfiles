@@ -3,7 +3,7 @@
   email = realredknife@gmail.com
 
 [github]
-  user = redknife
+  user = Redknife
 
 [alias]
   br = branch
@@ -13,7 +13,6 @@
   ci = commit
   ch = checkout
   fc = commit -am 'Initial commit.'
-  cpush = "!sh -c 'git commit -au -m \"$1\" && git push -u origin' -"
   d = diff
   st = status --short
 
@@ -24,17 +23,8 @@
   discard = checkout -- .
   rmtag = "!sh -c 'git tag -d $1; git push origin :refs/tags/$1'"
 
-  changelog = !sh "$HOME/Developer/redknife/dotfiles/git-extras/git-changelog.sh"
-  rstatus   = !zsh "$HOME/Developer/redknife/dotfiles/git-extras/git-rstatus.sh"
-  release   = !sh "$HOME/Developer/redknife/dotfiles/git-extras/git-release.sh"
-  setup     = !zsh "$HOME/Developer/redknife/dotfiles/git-extras/git-setup.sh"
-  summary   = !zsh "$HOME/Developer/redknife/dotfiles/git-extras/git-summary.sh"
-  delete-branch = !sh "$HOME/Developer/redknife/dotfiles/git-extras/git-delete-branch.sh"
-
   pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1; } ; f"
 
-  ghfork = !sh "$HOME/Developer/redknife/dotfiles/git-extras/git-ghpull.sh"
-  cleanup = !ruby "$HOME/Developer/redknife/dotfiles/git-extras/git-cleanup.rb"
 	switch = !legit switch \"$@\"
 	branches = !legit branches
 	sprout = !legit sprout \"$@\"
@@ -51,7 +41,7 @@
   ui = true
 
 [core]
-  editor = vim
+	editor = atom --wait
   excludesfile = ~/.gitignore
 
 [format]
@@ -64,19 +54,6 @@
 [log]
   abbrevCommit = true
 
-# URL shorthands
-# gh:redknife/dotfiles
-[url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "gh:"
-  pushInsteadOf = "git://github.com/"
-
-# gist:3928760
-[url "git@gist.github.com:"]
-  insteadOf = "gist:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
-
 [mergetool]
     keepBackup = false
 [init]
@@ -84,6 +61,6 @@
 [ghi]
     token = !security find-internet-password -a redknife -s github.com -l 'ghi token' -w
 [filter "lfs"]
+	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
-	required = true

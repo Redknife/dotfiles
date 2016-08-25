@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+# Location sources oh-my-zsh
+export ZSH=/Users/redknife/.oh-my-zsh
+
+# Oh-my-zsh configuration
+ZSH_THEME="robbyrussell"
+ENABLE_CORRECTION="false"
+
+source $HOME/Developer/rs/dotfiles/zsh/envs.zsh
+source $HOME/Developer/rs/dotfiles/zsh/aliases.zsh
+source $HOME/Developer/rs/dotfiles/zsh/functions.zsh
+source $HOME/Developer/rs/dotfiles/zsh/plugins/k/k.plugin.zsh
+
+plugins=(
+  common-aliases git osx
+  bower pip brew brew-cask npm
+  ssh-agent vagrant
+  extract last-working-dir
+)
+
+# Load oh-my-zsh
+source $ZSH/oh-my-zsh.sh
