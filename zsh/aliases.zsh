@@ -1,20 +1,12 @@
 alias a='atom'
 
 alias dev='cd ~/Developer/rs'
-alias work='cd ~/Developer/rs/work'
-alias testing='cd ~/Developer/rs/testing'
-alias ggh='cd ~/Developer/rs/github'
-alias gbb='cd ~/Developer/rs/bitbucket'
-
-# Simple clear command.
-alias cl='clear'
-
-# NPM
-alias ni='npm install'
-alias nis='npm install --save'
-alias nibi='npm install && bower install'
-alias nibir='rm -rf {bower_components,node_modules} && npm install && bower install'
-alias ns='npm search'
+alias go-work='cd ~/Developer/rs/work'
+alias go-testing='cd ~/Developer/rs/testing'
+alias go-gh='cd ~/Developer/rs/github'
+alias go-bb='cd ~/Developer/rs/bitbucket'
+alias go-rs='cd ~/Developer/rs'
+alias go-dotfiles='cd ~/Developer/rs/dotfiles'
 
 # Simple http server in cur dir
 alias serve='python -m SimpleHTTPServer'

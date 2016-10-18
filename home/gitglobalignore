@@ -1,0 +1,44 @@
+# Mac OS Files
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux Files
+*~
+
+# IDE, vagrant, sass, etc
+.vagrant
+*.idea
+*.swp
+*.sass-cache
+
+# Common files
+*.log
+*.tmp
+*.out
+*.lock
+*.swp
+*.so

@@ -10,13 +10,16 @@ ENABLE_CORRECTION="false"
 source $HOME/Developer/rs/dotfiles/zsh/envs.zsh
 source $HOME/Developer/rs/dotfiles/zsh/aliases.zsh
 source $HOME/Developer/rs/dotfiles/zsh/functions.zsh
-source $HOME/Developer/rs/dotfiles/zsh/plugins/k/k.plugin.zsh
 
 plugins=(
-  common-aliases git osx
-  bower pip brew brew-cask npm
-  ssh-agent vagrant
+  compleat
+  ssh-agent
+  git osx brew
+  vagrant
   extract last-working-dir
+  npm nvm
+  # zsh-nvm
+  # pyenv pip
 )
 
 # Load oh-my-zsh

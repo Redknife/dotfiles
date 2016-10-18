@@ -1,9 +1,6 @@
 # Editor
 export EDITOR='atom'
 
-# Homebrew
-export PATH=/usr/local/sbin:$PATH
-
 # Pyenv
 export PYENV_ROOT=$HOME/.pyenv
 
