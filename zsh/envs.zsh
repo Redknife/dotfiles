@@ -1,6 +1,9 @@
 # Editor
 export EDITOR='atom'
 
+# Brew
+export PATH="/usr/local/sbin:$PATH"
+
 # Pyenv
 export PYENV_ROOT=$HOME/.pyenv
 

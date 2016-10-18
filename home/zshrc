@@ -18,6 +18,7 @@ plugins=(
   vagrant
   extract last-working-dir
   npm nvm
+  z
   # zsh-nvm
   # pyenv pip
 )
