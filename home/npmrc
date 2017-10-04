@@ -7,3 +7,4 @@ cache-min=9999
 //loglevel=silent
 save-exact=true
 status=true
+//registry.npmjs.org/:_authToken=3f82a9f0-68da-413a-89b4-0cf12baae5b7

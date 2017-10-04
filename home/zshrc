@@ -4,24 +4,27 @@
 export ZSH=/Users/redknife/.oh-my-zsh
 
 # Oh-my-zsh configuration
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 ENABLE_CORRECTION="false"
 
 source $HOME/Developer/rs/dotfiles/zsh/envs.zsh
 source $HOME/Developer/rs/dotfiles/zsh/aliases.zsh
 source $HOME/Developer/rs/dotfiles/zsh/functions.zsh
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 plugins=(
   compleat
   ssh-agent
-  git osx brew
+  osx brew
   vagrant
   extract last-working-dir
-  npm nvm
-  z
-  # zsh-nvm
-  # pyenv pip
+  nvm npm
 )
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

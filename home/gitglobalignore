@@ -3,7 +3,6 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon
 .Spotlight-V100
 .Trashes
 .DocumentRevisions-V100
@@ -20,18 +19,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Windows Files
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Linux Files
-*~
-
 # IDE, vagrant, sass, etc
 .vagrant
-*.idea
+.idea
 *.swp
 *.sass-cache
 
@@ -39,6 +29,5 @@ $RECYCLE.BIN/
 *.log
 *.tmp
 *.out
-*.lock
 *.swp
 *.so

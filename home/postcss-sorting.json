@@ -4,6 +4,7 @@
 		"sort-order": [
 			[ "$variable" ],
 			[ "@extend" ],
+      [ "composes" ],
 			[
 				"@atrule",
 				"@include",

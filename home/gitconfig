@@ -7,7 +7,7 @@
 
 [core]
   # Global ignore
-  excludesfile = ~/.gitglobalignore
+	excludesfile = /Users/redknife/.gitglobalignore
   # Don't convert line break to CRLF. Keep CR
   autocrlf = input
   # Paginate results
@@ -15,7 +15,7 @@
   # Remove whitespaces, use CR and indent using spaces
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   # Default text editor
-  editor = atom --wait
+  editor = vim
 
 [color]
   branch = auto
@@ -51,3 +51,11 @@
 [format]
   pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
   graph = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/WebStorm.app/Contents/MacOS/webstorm
+	trustExitCode = true
+[merge]
+	ff = false
