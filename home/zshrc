@@ -7,20 +7,20 @@ export ZSH=/Users/redknife/.oh-my-zsh
 ZSH_THEME="spaceship"
 ENABLE_CORRECTION="false"
 
-source $HOME/Developer/rs/dotfiles/zsh/envs.zsh
-source $HOME/Developer/rs/dotfiles/zsh/aliases.zsh
-source $HOME/Developer/rs/dotfiles/zsh/functions.zsh
-
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 plugins=(
   compleat
   ssh-agent
   osx brew
   vagrant
   extract last-working-dir
-  nvm npm
+  npm yarn
 )
+
+source $HOME/dev/dotfiles/zsh/envs.zsh
+source $HOME/dev/dotfiles/zsh/aliases.zsh
+source $HOME/dev/dotfiles/zsh/functions.zsh
+
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
