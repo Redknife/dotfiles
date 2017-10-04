@@ -7,7 +7,7 @@
 
 [core]
   # Global ignore
-	excludesfile = /Users/redknife/.gitglobalignore
+	excludesfile = /Users/redknife/dev/dotfiles/home/global-gitignore
   # Don't convert line break to CRLF. Keep CR
   autocrlf = input
   # Paginate results
@@ -54,7 +54,7 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
-[mergetool "sourcetree"]
+[mergetool "webstorm"]
 	cmd = /Applications/WebStorm.app/Contents/MacOS/webstorm
 	trustExitCode = true
 [merge]
