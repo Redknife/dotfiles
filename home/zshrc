@@ -4,13 +4,13 @@
 export ZSH=/Users/redknife/.oh-my-zsh
 
 # Oh-my-zsh configuration
-ZSH_THEME="spaceship"
+ZSH_THEME="ys"
 ENABLE_CORRECTION="false"
 
 plugins=(
   compleat
   ssh-agent
-  osx brew
+  osx
   vagrant
   extract last-working-dir
   npm yarn
