@@ -1,5 +1,5 @@
 [user]
-  name = Sergey Rogachev
+  name = Sergei Rogachev
   email = realredknife@gmail.com
 
 [github]
@@ -9,7 +9,7 @@
   # Global ignore
 	excludesfile = /Users/redknife/dev/dotfiles/home/global-gitignore
   # Don't convert line break to CRLF. Keep CR
-  autocrlf = input
+	autocrlf = input
   # Paginate results
   pager = less -FRSX
   # Remove whitespaces, use CR and indent using spaces
@@ -59,3 +59,7 @@
 	trustExitCode = true
 [merge]
 	ff = false
+[pull]
+	ff = only
+[init]
+	defaultBranch = main

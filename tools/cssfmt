@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 if [ -z "$1" ]; then
   echo "Usage: cssfmt input-file [output-file]"
   exit 1;
@@ -10,8 +12,8 @@ if [ -z "$output" ]; then
   output=$file
 fi
 
-postcss_config=/Users/redknife/Developer/rs/dotfiles/home/postcss-sorting.json
-stylelint_config=/Users/redknife/Developer/rs/dotfiles/home/stylelint-config.json
+postcss_config=/Users/redknife/dev/dotfiles/home/postcss-sorting.json
+stylelint_config=/Users/redknife/dev/dotfiles/home/stylelint-config.json
 
 stylefmt -c $stylelint_config $file $output
 postcss -u postcss-sorting -s postcss-scss -c $postcss_config -o $output $file

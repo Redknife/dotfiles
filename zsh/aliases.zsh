@@ -1,4 +1,4 @@
-alias a='atom'
+alias ds='devspace'
 
 alias dev='cd ~/dev'
 alias go-work='cd ~/dev/work'
@@ -7,7 +7,7 @@ alias go-gh='cd ~/dev/github'
 alias go-dotfiles='cd ~/dev/dotfiles'
 
 # Simple http server in cur dir
-alias serve='python -m SimpleHTTPServer'
+# alias serve='python -m SimpleHTTPServer'
 
 # Lists the ten most used commands.
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
@@ -39,9 +39,8 @@ alias gcf='git config --list'
 alias gcl='git clone --recursive'
 alias gclean='git clean -fd'
 alias gpristine='git reset --hard && git clean -dfx'
-alias gcm='git checkout master'
 alias gcd='git checkout dev'
-alias gcmsg='git commit -m'
+alias gcm='git commit -m'
 alias gco='git checkout'
 alias gcount='git shortlog -sn'
 alias gcp='git cherry-pick'
@@ -56,3 +55,5 @@ alias gdca='git diff --cached'
 alias gdct='git describe --tags `git rev-list --tags --max-count=1`'
 alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gdw='git diff --word-diff'
+
+alias lsla='ls -la'

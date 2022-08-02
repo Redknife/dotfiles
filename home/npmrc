@@ -1,8 +1,10 @@
-init-author-name=Rogachev Sergey
+init-author-name=Sergei Rogachev
 init-author-email=redknife183@gmail.com
 init-author-url=https://github.com/Redknife
 init-license=MIT
 init-version=0.0.0
-cache-min=9999
 save-exact=true
 status=true
+email=redknife183@gmail.com
+always-auth=true
+save-prefix=

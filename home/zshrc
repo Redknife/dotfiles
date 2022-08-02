@@ -1,30 +1,118 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 #!/usr/bin/env zsh
+
+export LC_ALL=en_US.UTF-8
 
 # Location sources oh-my-zsh
 export ZSH=/Users/redknife/.oh-my-zsh
 
 # Oh-my-zsh configuration
-ZSH_THEME="ys"
+ZSH_THEME="spaceship"
 ENABLE_CORRECTION="false"
+SPACESHIP_PROMPT_ORDER=(
+  time
+  user
+  host
+  dir
+  package
+  node
+  ruby
+  elixir
+  xcode
+  swift
+  golang
+  php
+  rust
+  julia
+  docker
+  aws
+  venv
+  conda
+  pyenv
+  dotnet
+  ember
+  kubecontext
+  battery
+  git
+  hg
+  exec_time
+  line_sep
+  vi_mode
+  jobs
+  exit_code
+  char
+)
+SPACESHIP_PROMPT_SYMBOL="➜"
+SPACESHIP_PROMPT_ADD_NEWLINE=true
+SPACESHIP_PROMPT_SEPARATE_LINE=true
+SPACESHIP_PROMPT_PREFIXES_SHOW=false
+SPACESHIP_PROMPT_SUFFIXES_SHOW=true
+SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
+SPACESHIP_BATTERY_SHOW=false
+SPACESHIP_KUBECONTEXT_SHOW=false
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_PACKAGE_SHOW=false
+
+export NVM_DIR="$HOME/.nvm"
+export NVM_HOMEBREW=$(brew --prefix nvm)
+export NVM_LAZY=1
 
 plugins=(
   compleat
+  autojump
   ssh-agent
-  osx
-  vagrant
-  extract last-working-dir
-  npm yarn
+  last-working-dir
+  nvm
 )
+
+# Timing All Plugins ->
+# Load all of the plugins that were defined in ~/.zshrc
+# for plugin ($plugins); do
+#   timer=$(($(gdate +%s%N)/1000000))
+#   if [ -f $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh ]; then
+#     source $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh
+#   elif [ -f $ZSH/plugins/$plugin/$plugin.plugin.zsh ]; then
+#     source $ZSH/plugins/$plugin/$plugin.plugin.zsh
+#   fi
+#   now=$(($(gdate +%s%N)/1000000))
+#   elapsed=$(($now-$timer))
+#   echo $elapsed":" $plugin
+# done
+# <-
+
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
 
 source $HOME/dev/dotfiles/zsh/envs.zsh
 source $HOME/dev/dotfiles/zsh/aliases.zsh
 source $HOME/dev/dotfiles/zsh/functions.zsh
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
